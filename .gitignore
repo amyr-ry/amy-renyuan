@@ -1,1 +1,10 @@
 .claude/
+.DS_Store
+art/wild west/originals/
+
+# Raw video/source-doc assets: hosted externally, not committed to git
+*.mp4
+*.mov
+*.pptx
+*.docx
+*.xlsx
