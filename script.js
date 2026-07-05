@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Case study highlight strips: click a still to view it larger in a lightbox.
   const lightbox = document.querySelector(".lightbox");
-  const highlightCards = document.querySelectorAll(".highlight-card");
+  const highlightCards = document.querySelectorAll(".highlight-card, .window-frame, .mosaic-item");
   if (lightbox && highlightCards.length) {
     const lightboxImg = lightbox.querySelector("img");
 
