@@ -1233,8 +1233,7 @@ html.js .full-bleed-figure.is-visible img {
 
 .cs-main-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  grid-template-rows: repeat(2, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 26px;
   padding-bottom: 26px;
 }
@@ -1244,6 +1243,7 @@ html.js .full-bleed-figure.is-visible img {
   display: block;
   overflow: hidden;
   border-radius: 6px;
+  aspect-ratio: 4 / 2.9;
 }
 
 .cs-card--primary {
@@ -1274,7 +1274,7 @@ html.js .full-bleed-figure.is-visible img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 12, 14, 0.08) 0%, rgba(20, 12, 14, 0.38) 58%, rgba(20, 12, 14, 0.88) 100%);
+  background: linear-gradient(180deg, rgba(15, 9, 10, 0.2) 0%, rgba(15, 9, 10, 0.38) 32%, rgba(15, 9, 10, 0.65) 60%, rgba(12, 7, 8, 0.94) 100%);
   pointer-events: none;
 }
 
@@ -1291,7 +1291,7 @@ html.js .full-bleed-figure.is-visible img {
 
 .cs-card-eyebrow {
   font-family: var(--font-display);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
@@ -1301,16 +1301,19 @@ html.js .full-bleed-figure.is-visible img {
 
 .cs-card-title {
   font-family: var(--font-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
 }
 
 .cs-card-tag {
-  font-size: 0.95rem;
-  color: rgba(250, 245, 236, 0.82);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(250, 245, 236, 0.92);
   max-width: 42ch;
   margin: 0 0 20px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .cs-card-arrow {
@@ -1584,6 +1587,16 @@ html.js .full-bleed-figure.is-visible img {
   max-width: 44ch;
 }
 
+.case-heading-sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.62em;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
 .case-bullets {
   list-style: none;
   margin: 0;
@@ -1666,6 +1679,15 @@ html.js .full-bleed-figure.is-visible img {
 
 .case-split--reverse .highlight-grid {
   order: 1;
+}
+
+.case-split-media {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.case-split-media .highlight-grid {
+  margin-bottom: 24px;
 }
 
 .highlight-strip {
@@ -1813,11 +1835,16 @@ html.js .full-bleed-figure.is-visible img {
 }
 
 .pillar-card {
-  flex: 0 0 150px;
-  min-height: 230px;
+  flex: 0 0 160px;
+  min-height: 260px;
   background: var(--cream-deep);
-  border-radius: 10px 10px 4px 4px;
-  padding: 22px 16px;
+  border-top: 3px solid var(--maroon);
+  border-radius: 8px 8px 4px 4px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   box-shadow: 0 14px 30px rgba(74, 26, 39, 0.1);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
@@ -1825,6 +1852,17 @@ html.js .full-bleed-figure.is-visible img {
 .pillar-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 20px 38px rgba(74, 26, 39, 0.16);
+}
+
+.pillar-index {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--maroon);
+  opacity: 0.55;
+  margin-bottom: 18px;
 }
 
 .pillar-label {
@@ -1841,7 +1879,9 @@ html.js .full-bleed-figure.is-visible img {
   flex: 1 1 340px;
   min-width: 300px;
   min-height: auto;
+  align-items: stretch;
   background: var(--maroon-dark);
+  border-top: 3px solid var(--gold);
   color: var(--cream);
   padding: 26px;
   display: flex;
@@ -2012,20 +2052,74 @@ html.js .full-bleed-figure.is-visible img {
   margin-bottom: 4px;
 }
 
+.doc-release-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--maroon-dark);
+  margin: 0 0 18px;
+  line-height: 1.5;
+}
+
+.doc-release p {
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.doc-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.doc-refs {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.doc-refs p {
+  margin: 0 0 4px;
+}
+
 /* ---------- AMG Section B: pillar remap + phase timeline ---------- */
+
+.pivot-panel {
+  margin-top: 44px;
+  padding: 48px;
+  background: var(--cream-deep);
+  border-radius: 14px;
+}
+
+.pivot-panel-label {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: var(--maroon);
+  margin: 0 0 22px;
+}
 
 .remap {
   display: flex;
   align-items: center;
-  gap: 28px;
-  margin: 44px 0 56px;
+  gap: 32px;
+  margin: 0 0 56px;
 }
 
 .remap-col {
   flex: 1;
-  background: var(--cream-deep);
+  background: var(--cream);
   border-radius: 10px;
-  padding: 26px;
+  padding: 30px;
+  box-shadow: 0 14px 30px rgba(74, 26, 39, 0.08);
 }
 
 .remap-col--target {
@@ -2133,8 +2227,8 @@ html.js .full-bleed-figure.is-visible img {
 
 .window-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   margin-top: 44px;
 }
 
@@ -2180,19 +2274,17 @@ html.js .full-bleed-figure.is-visible img {
 .window-frame img {
   width: 100%;
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: top;
 }
 
-/* ---------- AMG Section D: contact-sheet mosaic ---------- */
+/* ---------- AMG Section D: client gallery row ---------- */
 
 .mosaic {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 140px;
-  grid-auto-flow: dense;
-  gap: 12px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
   margin-top: 36px;
 }
 
@@ -2200,19 +2292,19 @@ html.js .full-bleed-figure.is-visible img {
   position: relative;
   display: block;
   width: 100%;
-  height: 100%;
   padding: 0;
   border: none;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
+  aspect-ratio: 9 / 16;
   cursor: zoom-in;
-  box-shadow: 0 10px 22px rgba(74, 26, 39, 0.14);
+  box-shadow: 0 14px 30px rgba(74, 26, 39, 0.14);
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
 }
 
 .mosaic-item:hover {
-  box-shadow: 0 20px 36px rgba(74, 26, 39, 0.26);
-  z-index: 2;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(74, 26, 39, 0.22);
 }
 
 .mosaic-item:focus-visible {
@@ -2225,31 +2317,6 @@ html.js .full-bleed-figure.is-visible img {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-.mosaic-item--big {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.mosaic-item--tall {
-  grid-row: span 2;
-}
-
-.mosaic-item--rot-a {
-  transform: rotate(-1.6deg);
-}
-
-.mosaic-item--rot-a:hover {
-  transform: rotate(0deg) scale(1.04);
-}
-
-.mosaic-item--rot-b {
-  transform: rotate(1.3deg);
-}
-
-.mosaic-item--rot-b:hover {
-  transform: rotate(0deg) scale(1.04);
 }
 
 /* ---------- Lightbox ---------- */
@@ -2444,6 +2511,10 @@ html.js .full-bleed-figure.is-visible img {
     min-width: 0;
   }
 
+  .pivot-panel {
+    padding: 32px;
+  }
+
   .remap {
     flex-direction: column;
     align-items: stretch;
@@ -2463,22 +2534,8 @@ html.js .full-bleed-figure.is-visible img {
     display: none;
   }
 
-  .window-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .mosaic {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .mosaic-item--rot-a,
-  .mosaic-item--rot-b {
-    transform: none;
-  }
-
-  .mosaic-item--rot-a:hover,
-  .mosaic-item--rot-b:hover {
-    transform: scale(1.03);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -2619,12 +2676,6 @@ html.js .full-bleed-figure.is-visible img {
   }
 
   .mosaic {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 120px;
-  }
-
-  .mosaic-item--big {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
