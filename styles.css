@@ -61,7 +61,7 @@ h1, h2, h3 {
 .wrap {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 56px;
 }
 
 /* ---------- Grain overlay ---------- */
@@ -113,7 +113,7 @@ html.js .reveal.is-visible {
 .nav-inner {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 18px 32px;
+  padding: 18px 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -660,7 +660,8 @@ footer.contact-bar {
 /* ---------- Art hero page: editorial bento grid ---------- */
 
 .art-statement {
-  padding: 72px 0 80px;
+  padding-top: 72px;
+  padding-bottom: 80px;
 }
 
 .art-statement-inner {
@@ -777,7 +778,8 @@ footer.contact-bar {
 /* ---------- Individual project pages ---------- */
 
 .project-hero {
-  padding: 56px 0 60px;
+  padding-top: 56px;
+  padding-bottom: 60px;
 }
 
 .project-back {
@@ -932,8 +934,8 @@ footer.contact-bar {
 
 .marquee-strip {
   height: 380px;
+  margin: 40px 0;
   overflow: hidden;
-  border-radius: 6px;
   -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
   mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
 }
