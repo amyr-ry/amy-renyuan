@@ -66,6 +66,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Case study highlight strips: click a still to view it larger in a lightbox.
+  const lightbox = document.querySelector(".lightbox");
+  const highlightCards = document.querySelectorAll(".highlight-card");
+  if (lightbox && highlightCards.length) {
+    const lightboxImg = lightbox.querySelector("img");
+
+    const openLightbox = (card) => {
+      const img = card.querySelector("img");
+      lightboxImg.src = card.getAttribute("data-full") || img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add("is-active");
+    };
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("is-active");
+      lightboxImg.src = "";
+    };
+
+    highlightCards.forEach((card) => {
+      card.addEventListener("click", () => openLightbox(card));
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox || event.target.closest(".lightbox-close")) {
+        closeLightbox();
+      }
+    });
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lightbox.classList.contains("is-active")) {
+        closeLightbox();
+      }
+    });
+  }
+
   // Wild West filmstrip: click-and-drag panning for mouse users
   // (touch and trackpad already scroll this natively).
   const filmstrip = document.querySelector(".filmstrip");
