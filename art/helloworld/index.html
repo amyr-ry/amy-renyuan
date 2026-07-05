@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<script>document.documentElement.classList.add("js");</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hello World — Amy Ren</title>
+<meta name="description" content="Hello World, the hand-coded portfolio site Amy Ren built before this one." />
+<meta name="theme-color" content="#6e2436" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Amy Ren</a>
+    <ul class="nav-links">
+      <li><a href="/about/">About</a></li>
+      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/art/" aria-current="page">Art</a></li>
+      <li><a href="/contact/">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap" style="padding-top: 28px;">
+    <a href="/art/" class="project-back reveal">&larr; Art</a>
+  </div>
+
+  <img class="project-banner reveal" src="/art/helloworld/1.jpg" alt="Title screen of Amy Ren's hand-coded portfolio site, Hello World" loading="eager" />
+
+  <section class="wrap project-hero" style="padding-top: 40px;">
+    <h1 class="reveal">Hello World</h1>
+    <div class="project-statement reveal" style="--i:1">
+      <p>Before this site, there was another one. I taught myself to code for it, every line written by hand, no template doing the thinking for me.</p>
+      <p>The concept came from a phrase I kept circling back to on my travels: 读万卷书，行万里路, to read widely and to travel far. I wanted to know what each form of learning gives you that the other can't, classroom study versus just being somewhere and paying attention. The color palette was drawn from five days driving alone along the southern coast of France, where every town seemed to carry its own palette. Color there felt like identity, the way a place introduces itself before you know its name. I built the rest of the site around that same logic, treating design as another form of noticing.</p>
+    </div>
+
+    <figure class="project-figure project-inline-figure reveal" style="--i:2">
+      <img src="/art/helloworld/2.jpg" alt="Southern France page from the original site, showing its color palette logic" loading="lazy" />
+      <figcaption>The Southern France page, where the site's color logic started.</figcaption>
+    </figure>
+
+    <div class="project-statement reveal" style="--i:3">
+      <p>The site you're on right now was built differently. I directed it through Claude Code rather than writing every line myself, which is its own skill: knowing what to build and how to get an AI to build it well. The one below, I built by hand, start to finish. Different tools, same instinct underneath. Design has never felt separate from the rest of my work. It's just another way of paying attention and making that attention visible.</p>
+    </div>
+
+    <div class="hero-actions reveal" style="--i:4">
+      <a href="https://amyr-ry.github.io/portfolio-amy/" target="_blank" rel="noopener" class="btn btn-primary">View the Original Site &rarr;</a>
+    </div>
+
+    <div class="project-closing">
+      <a href="/art/">&larr; Back to Art</a>
+    </div>
+  </section>
+</main>
+
+<footer class="contact-bar">
+  <div class="wrap contact-inner">
+    <span class="name">Amy Ren</span>
+    <div class="contact-links">
+      <a href="mailto:amyry@uchicago.edu">amyry@uchicago.edu</a>
+      <a href="https://www.linkedin.com/in/amyren0905" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="contact-copyright">&copy; 2026 Amy Ren. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/script.js" defer></script>
+</body>
+</html>

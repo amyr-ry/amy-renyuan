@@ -5,8 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const hasHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
-  // Staggered scroll reveal
-  const revealTargets = document.querySelectorAll(".reveal");
+  // Staggered scroll reveal (also covers full-bleed gallery figures, which
+  // share the same is-visible trigger class as .reveal)
+  const revealTargets = document.querySelectorAll(".reveal, .full-bleed-figure");
   if ("IntersectionObserver" in window && revealTargets.length) {
     const io = new IntersectionObserver(
       (entries) => {
@@ -62,6 +63,31 @@ document.addEventListener("DOMContentLoaded", () => {
     caseList.addEventListener("mouseleave", () => {
       activeRow = null;
       preview.classList.remove("is-active");
+    });
+  }
+
+  // Wild West filmstrip: click-and-drag panning for mouse users
+  // (touch and trackpad already scroll this natively).
+  const filmstrip = document.querySelector(".filmstrip");
+  if (filmstrip && hasHover) {
+    let isDown = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    filmstrip.addEventListener("mousedown", (event) => {
+      isDown = true;
+      startX = event.pageX;
+      startScroll = filmstrip.scrollLeft;
+    });
+
+    window.addEventListener("mouseup", () => {
+      isDown = false;
+    });
+
+    filmstrip.addEventListener("mousemove", (event) => {
+      if (!isDown) return;
+      event.preventDefault();
+      filmstrip.scrollLeft = startScroll - (event.pageX - startX);
     });
   }
 });
