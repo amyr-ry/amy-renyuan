@@ -19,7 +19,7 @@
   --font-display: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-body: Georgia, "Times New Roman", serif;
 
-  --content-max: 1180px;
+  --content-max: 1480px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -29,6 +29,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 118%;
 }
 
 body {
@@ -36,8 +37,8 @@ body {
   background: var(--cream);
   color: var(--ink);
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -494,6 +495,12 @@ section.block {
   transition: transform 0.6s var(--ease);
 }
 
+.art-tile--helloworld img {
+  object-fit: contain;
+  object-position: left center;
+  background: var(--cream-deep);
+}
+
 .art-tile::after {
   content: "";
   position: absolute;
@@ -658,13 +665,13 @@ footer.contact-bar {
 
 .art-statement-inner {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 2fr;
   gap: 56px;
-  align-items: end;
+  align-items: center;
 }
 
 .art-statement h1 {
-  font-size: clamp(5rem, 13vw, 9.5rem);
+  font-size: clamp(4.5rem, 11vw, 8rem);
   line-height: 0.86;
   color: var(--maroon-dark);
   margin: 0;
@@ -672,8 +679,7 @@ footer.contact-bar {
 }
 
 .art-statement-text {
-  max-width: 56ch;
-  padding-bottom: 0.4em;
+  max-width: 62ch;
 }
 
 .art-statement-text p {
@@ -744,42 +750,28 @@ footer.contact-bar {
 }
 
 .bento-card--rustylake {
-  grid-column: span 7;
-  height: 640px;
-}
-
-.bento-card--helloworld {
-  grid-column: span 5;
-  height: 640px;
-}
-
-.bento-card--xinjiang,
-.bento-card--paris,
-.bento-card--virginia {
-  grid-column: span 4;
-  height: 440px;
-}
-
-.bento-card--wildwest {
   grid-column: span 12;
-  height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  aspect-ratio: 16 / 9;
+  height: auto;
 }
 
-.bento-card--wildwest .bento-card-title {
-  position: static;
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
+.bento-card--helloworld,
+.bento-card--xinjiang {
+  grid-column: span 6;
+  height: 480px;
 }
 
-.bento-card--wildwest::after {
-  background: rgba(20, 12, 14, 0.42);
+.bento-card--paris,
+.bento-card--virginia,
+.bento-card--wildwest {
+  grid-column: span 4;
+  height: 360px;
 }
 
 .bento-card--helloworld img {
+  object-fit: contain;
   object-position: left center;
+  background: var(--cream-deep);
 }
 
 /* ---------- Individual project pages ---------- */
@@ -811,6 +803,16 @@ footer.contact-bar {
 
 .project-statement {
   max-width: 66ch;
+}
+
+.project-statement--full {
+  max-width: none;
+  column-count: 2;
+  column-gap: 64px;
+}
+
+.project-statement--full p {
+  break-inside: avoid;
 }
 
 .project-statement p {
@@ -882,12 +884,6 @@ footer.contact-bar {
 }
 
 /* Rusty Lake: side-by-side video + auto-scrolling marquee */
-
-.wrap-wide {
-  max-width: 1880px;
-  margin: 0 auto;
-  padding: 0 32px;
-}
 
 .video-grid {
   display: grid;
@@ -987,7 +983,7 @@ footer.contact-bar {
 .full-bleed-figure {
   position: relative;
   width: 100%;
-  min-height: 90dvh;
+  min-height: 68dvh;
   overflow: hidden;
   margin: 0;
 }
@@ -1044,7 +1040,7 @@ html.js .full-bleed-figure.is-visible img {
 }
 
 .full-bleed-figure--portrait {
-  min-height: 70dvh;
+  min-height: 55dvh;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -1262,6 +1258,10 @@ html.js .full-bleed-figure.is-visible img {
     position: static;
   }
 
+  .project-statement--full {
+    column-count: 1;
+  }
+
   .project-split-quiet {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1288,16 +1288,16 @@ html.js .full-bleed-figure.is-visible img {
   }
 
   .nav-logo {
-    font-size: 1.05rem;
+    font-size: 0.9rem;
   }
 
   .nav-links {
-    gap: 14px;
+    gap: 12px;
     flex-wrap: wrap;
   }
 
   .nav-links a {
-    font-size: 0.82rem;
+    font-size: 0.7rem;
   }
 
   .hero {
@@ -1351,9 +1351,5 @@ html.js .full-bleed-figure.is-visible img {
 
   .marquee-strip {
     height: 220px;
-  }
-
-  .bento-card--wildwest {
-    height: 200px;
   }
 }
