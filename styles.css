@@ -673,6 +673,324 @@ footer.contact-bar {
   margin: 0 0 32px;
 }
 
+/* ---------- About page: opening statement + anchor card + accordion ---------- */
+
+.about-hero {
+  padding: 72px 0 8px;
+}
+
+.about-hero-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--maroon);
+  margin: 0 0 18px;
+  font-weight: 600;
+}
+
+.about-hero h1 {
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+  line-height: 1.35;
+  color: var(--maroon-dark);
+  max-width: 34ch;
+  margin: 0;
+}
+
+.about-cards {
+  padding: 56px 0 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream-deep);
+  overflow: hidden;
+}
+
+.about-card--anchor {
+  padding: 48px;
+}
+
+.about-anchor-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-card-eyebrow {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--maroon);
+  margin-bottom: 16px;
+}
+
+.about-anchor-lede {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--maroon-dark);
+  line-height: 1.4;
+  margin: 0 0 28px;
+}
+
+.about-anchor-text .case-bullets {
+  margin-bottom: 32px;
+}
+
+.about-education {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+
+.about-education-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+
+.about-education p {
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.about-education p:last-child {
+  margin-bottom: 0;
+}
+
+.about-anchor-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 28%;
+  border-radius: 8px;
+  box-shadow: 0 24px 50px rgba(74, 26, 39, 0.18);
+  display: block;
+}
+
+/* accordion cards (Me at School / Side Hustles / Leisure) */
+
+.about-card summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.about-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-card-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--maroon-dark);
+  transition: color 0.2s ease;
+}
+
+.about-card-oneliner {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+
+.about-card-chevron {
+  flex-shrink: 0;
+  display: flex;
+  color: var(--maroon);
+  transition: transform 0.3s var(--ease);
+}
+
+.about-card-chevron svg {
+  width: 14px;
+  height: 8px;
+}
+
+.about-card[open] .about-card-chevron {
+  transform: rotate(180deg);
+}
+
+.about-card summary:hover .about-card-title {
+  color: var(--maroon);
+}
+
+.about-card-body {
+  padding: 0 40px 36px;
+}
+
+.about-card-body .case-bullets {
+  max-width: 68ch;
+}
+
+@media (max-width: 860px) {
+  .about-anchor-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-anchor-photo {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- Contact page: contact block + side-by-side resume viewers ---------- */
+
+.contact-oneliner {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  max-width: 56ch;
+  margin: 20px 0 0;
+}
+
+.contact-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 0 8px;
+  border-top: 1px solid var(--line);
+  margin-top: 40px;
+}
+
+.contact-method {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-method-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.contact-method-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--maroon-dark);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.contact-method:hover .contact-method-value {
+  color: var(--maroon);
+  border-color: var(--maroon);
+}
+
+.resume-section {
+  padding: 64px 0 100px;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 12px;
+}
+
+.resume-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-panel-head {
+  margin-bottom: 14px;
+}
+
+.resume-panel-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--maroon);
+}
+
+.resume-frame {
+  width: 100%;
+  height: 640px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 20px 44px rgba(74, 26, 39, 0.12);
+}
+
+.resume-panel .case-download {
+  margin-top: 16px;
+}
+
+@media (max-width: 860px) {
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    padding: 48px 0 4px;
+  }
+
+  .about-cards {
+    padding: 40px 0 64px;
+    gap: 18px;
+  }
+
+  .about-card--anchor {
+    padding: 28px 24px;
+  }
+
+  .about-card summary {
+    padding: 22px 24px;
+    gap: 16px;
+  }
+
+  .about-card-body {
+    padding: 0 24px 28px;
+  }
+
+  .contact-block {
+    gap: 28px;
+    padding-top: 28px;
+    margin-top: 28px;
+  }
+
+  .resume-section {
+    padding: 44px 0 64px;
+  }
+
+  .resume-frame {
+    height: 460px;
+  }
+}
+
 /* ---------- Art hero page: editorial bento grid ---------- */
 
 .art-statement {
@@ -1445,40 +1763,6 @@ html.js .full-bleed-figure.is-visible img {
 
 /* ---------- Case study pages: flagship hero, stats, bullets, highlights ---------- */
 
-.case-hero {
-  position: relative;
-  min-height: 82dvh;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  color: var(--cream);
-}
-
-.case-hero > img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.case-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(20, 12, 14, 0.32) 0%, rgba(20, 12, 14, 0.58) 48%, rgba(20, 12, 14, 0.94) 100%);
-  z-index: 1;
-}
-
-.case-hero-content {
-  position: relative;
-  z-index: 2;
-  padding-top: 120px;
-  padding-bottom: 60px;
-  width: 100%;
-}
-
 .project-back--light {
   color: rgba(250, 245, 236, 0.85);
 }
@@ -1491,15 +1775,6 @@ html.js .full-bleed-figure.is-visible img {
   color: var(--gold);
   margin: 0 0 20px;
   font-weight: 600;
-}
-
-.case-hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 8vw, 5.6rem);
-  line-height: 0.95;
-  color: var(--cream);
-  margin: 0 0 24px;
-  letter-spacing: -0.02em;
 }
 
 .case-role {
@@ -1589,7 +1864,7 @@ html.js .full-bleed-figure.is-visible img {
 .text-hero {
   position: relative;
   overflow: hidden;
-  min-height: 66dvh;
+  min-height: 42dvh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1597,28 +1872,13 @@ html.js .full-bleed-figure.is-visible img {
     radial-gradient(1100px 640px at 10% -12%, rgba(138, 51, 71, 0.5), transparent 60%),
     linear-gradient(165deg, var(--maroon) 0%, var(--maroon-dark) 58%, rgba(20, 12, 14, 0.97) 100%);
   color: var(--cream);
-  padding: 132px 0 72px;
+  padding: 64px 0 56px;
 }
 
 .text-hero .wrap {
   position: relative;
   z-index: 2;
   width: 100%;
-}
-
-.hero-ghost-num {
-  position: absolute;
-  top: 0.36em;
-  right: 4%;
-  z-index: 1;
-  font-family: var(--font-display);
-  font-size: clamp(9rem, 24vw, 17rem);
-  font-weight: 800;
-  line-height: 1;
-  color: rgba(250, 245, 236, 0.07);
-  letter-spacing: -0.02em;
-  pointer-events: none;
-  user-select: none;
 }
 
 .hero-scroll-cue {
@@ -2098,11 +2358,35 @@ html.js .full-bleed-figure.is-visible img {
   margin: 44px 0 0;
 }
 
+/* Wider, centered single video — e.g. Camal, where one video is the
+   whole page's only asset and deserves more visual weight. */
+.video-frame.video-frame--wide {
+  max-width: 720px;
+  margin: 44px auto 0;
+}
+
+/* Three assets side by side in one row — e.g. Law School's video +
+   two benchmark screenshots. Stacks to one column on mobile. */
+.asset-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 44px;
+}
+
+.asset-trio img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+  box-shadow: 0 16px 34px rgba(74, 26, 39, 0.14);
+}
+
 /* ---------- Creator Content: account section, two-row two-column structure ---------- */
 
 .account-top {
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 2fr 1fr;
   gap: 48px;
   align-items: center;
   margin: 40px 0 0;
@@ -2892,6 +3176,10 @@ html.js .full-bleed-figure.is-visible img {
     grid-template-columns: 1fr;
   }
 
+  .asset-trio {
+    grid-template-columns: 1fr;
+  }
+
   .cs-statement-inner {
     grid-template-columns: 1fr;
     align-items: start;
@@ -2919,13 +3207,8 @@ html.js .full-bleed-figure.is-visible img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .case-hero-content {
-    padding-top: 100px;
-    padding-bottom: 48px;
-  }
-
   .text-hero {
-    padding: 116px 0 56px;
+    padding: 56px 0 48px;
   }
 
   .case-split {
@@ -3090,20 +3373,9 @@ html.js .full-bleed-figure.is-visible img {
     gap: 26px;
   }
 
-  .case-hero-content {
-    padding-top: 88px;
-    padding-bottom: 40px;
-  }
-
   .text-hero {
-    padding: 96px 0 48px;
-    min-height: 58dvh;
-  }
-
-  .hero-ghost-num {
-    font-size: clamp(6rem, 32vw, 9rem);
-    top: 0.2em;
-    right: 2%;
+    padding: 48px 0 40px;
+    min-height: 34dvh;
   }
 
   .hero-scroll-cue {
