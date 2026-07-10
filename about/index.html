@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="case-page">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <script>document.documentElement.classList.add("js");</script>
@@ -31,33 +31,29 @@
 
 <main>
 
-  <header class="about-hero wrap">
-    <p class="about-hero-eyebrow reveal">About</p>
-    <h1 class="reveal" style="--i:1">It's genuinely hard to describe who I am in one sentence, so here's the long version — pick whichever part you're curious about.</h1>
+  <header class="about-hero-banner wrap">
+    <div class="about-hero-grid">
+      <div class="about-hero-copy">
+        <p class="about-hero-eyebrow reveal">About</p>
+        <h1 class="reveal" style="--i:1">It's genuinely hard to describe who I am in one sentence, so here's the long version — pick whichever part you're curious about.</h1>
+      </div>
+      <div class="hero-photo-frame reveal" style="--i:1">
+        <img src="portrait.jpg" alt="Portrait of Amy Ren" loading="eager" />
+      </div>
+    </div>
   </header>
 
   <section class="wrap about-cards">
 
     <article class="about-card about-card--anchor reveal" style="--i:1">
-      <div class="about-anchor-grid">
-        <div class="about-anchor-text">
-          <span class="about-card-eyebrow">The Professional Me</span>
-          <p class="about-anchor-lede">Bilingual marketer bridging Chinese brands and global markets — research-first, systems-minded, and genuinely fluent in both cultures, not just both languages.</p>
-          <ul class="case-bullets">
-            <li>I study how people actually behave, then build the marketing that meets them there — the throughline from a Sociology degree to cross-border marketing work</li>
-            <li>My focus is 出海 (cross-border) marketing: helping Chinese brands enter markets like the U.S. and Southeast Asia, and helping global brands make sense of Chinese platforms and consumers</li>
-            <li><strong>Long-term, I want to build my own integrated cross-border marketing company</strong> — strategy, content, and execution under one roof, instead of a brand getting handed between three different vendors</li>
-          </ul>
-          <div class="about-education">
-            <span class="about-education-label">Education</span>
-            <p>The University of Chicago, B.A. Sociology, Media Arts &amp; Design minor, Summa Cum Laude, Phi Beta Kappa, Gary Becker Scholar, Class of 2026</p>
-            <p>Booth School of Business, Master in Management (MiM), Marketing concentration, starting Aug 2026</p>
-          </div>
-        </div>
-        <div class="about-anchor-photo">
-          <img src="portrait.jpg" alt="Portrait of Amy Ren" loading="eager" />
-        </div>
-      </div>
+      <span class="about-card-eyebrow">The Professional Me</span>
+      <p class="about-anchor-lede">Bilingual marketer bridging Chinese brands and global markets — research-first, systems-minded, and genuinely fluent in both cultures, not just both languages.</p>
+      <ul class="case-bullets">
+        <li>I start with how people actually behave, then build the marketing that meets them there — a research-first habit more than a slogan</li>
+        <li>I've worked inside agencies, B2B teams, an institutional setting, and my own social accounts, and I'm comfortable adapting to whichever one I'm in</li>
+        <li><strong>Long-term, I want to build my own integrated cross-border marketing company</strong> — strategy, content, and execution under one roof, instead of a brand getting handed between three different vendors</li>
+        <li>Fluent with a range of marketing and content tools, from research and analytics to AI-assisted production — for specifics, <a href="/case-studies/">see selected work</a></li>
+      </ul>
     </article>
 
     <details class="about-card reveal" style="--i:2">
@@ -70,7 +66,14 @@
           <svg viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
       </summary>
-      <div class="about-card-body">
+      <div class="about-card-body about-card-body--roomy">
+        <div class="about-education">
+          <span class="about-education-label">Education</span>
+          <ul class="case-bullets">
+            <li>B.A. Sociology, Media Arts &amp; Design minor — Summa Cum Laude, Phi Beta Kappa, Gary Becker Scholar, Class of 2026, University of Chicago</li>
+            <li>Master in Management (MiM), Marketing concentration, Booth School of Business, starting Aug 2026</li>
+          </ul>
+        </div>
         <ul class="case-bullets">
           <li>Studied Sociology with a Media Arts &amp; Design minor — systems thinking on one side, visual storytelling on the other</li>
           <li>Treasurer for MODA (UChicago's fashion organization), handling budgeting and fundraising for a 100+ member group</li>
@@ -82,25 +85,6 @@
     <details class="about-card reveal" style="--i:3">
       <summary class="about-card-summary">
         <span class="about-card-heading">
-          <span class="about-card-title">My Side Hustles</span>
-          <span class="about-card-oneliner">If there's a client, a deliverable, and a deadline, I'm probably already in it.</span>
-        </span>
-        <span class="about-card-chevron" aria-hidden="true">
-          <svg viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-      </summary>
-      <div class="about-card-body">
-        <ul class="case-bullets">
-          <li>Cross-border marketing consulting for an Amazon-based industrial brand, a media agency's own accounts, a coconut water brand's Xiaohongshu launch, and a handful of others</li>
-          <li>Two self-media accounts on the side — one food, one travel — mostly because I like documenting things and I'm curious what makes content land differently across platforms (<a href="/case-studies/自媒体/">see the Creator Content case study</a>)</li>
-          <li>Won 1st place in a UChicago AI video competition, which is a fun way of saying I'll happily go down a rabbit hole with a new creative tool</li>
-        </ul>
-      </div>
-    </details>
-
-    <details class="about-card reveal" style="--i:4">
-      <summary class="about-card-summary">
-        <span class="about-card-heading">
           <span class="about-card-title">What I Do in My Leisure Time</span>
           <span class="about-card-oneliner">Mostly: cooking, traveling, and pretending I'm not going to overplan the itinerary again.</span>
         </span>
@@ -110,8 +94,8 @@
       </summary>
       <div class="about-card-body">
         <ul class="case-bullets">
-          <li>I travel with my parents when I can, and I'm the one in a friend group who ends up planning the itinerary</li>
-          <li>Cook most of my own meals — it shows up in the food account, but it started long before that</li>
+          <li>I travel whenever I can — with family, with friends, or by myself. I treat it as a great way of learning, on top of school. Many of these travels are documented in my <a href="/art/">artwork</a>.</li>
+          <li>Cook most of my own meals — it shows up in the <a href="/case-studies/creator-content/">food account</a>, but it started long before that</li>
           <li>Genuinely curious about what makes people from different cultures click (or not) — which is probably why this career path made sense in the first place</li>
         </ul>
       </div>
