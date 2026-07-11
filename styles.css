@@ -494,16 +494,16 @@ section.block {
 }
 
 .art-tile-pair {
-  align-self: center;
   display: flex;
+  flex-direction: column;
   gap: 22px;
   width: 100%;
-  height: 300px;
+  height: 100%;
 }
 
 .art-tile-pair .art-tile {
   flex: 1 1 50%;
-  height: 100%;
+  width: 100%;
 }
 
 .art-tile img {
@@ -597,11 +597,11 @@ section.block {
 }
 
 .philosophy-body p {
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   line-height: 1.7;
   color: rgba(250, 245, 236, 0.86);
   margin: 0;
-  max-width: 40ch;
+  max-width: 48ch;
   margin-left: auto;
 }
 
@@ -858,7 +858,7 @@ footer.contact-bar {
 }
 
 .about-card-body .case-bullets {
-  max-width: 68ch;
+  max-width: none;
 }
 
 @media (max-width: 860px) {
@@ -877,15 +877,15 @@ footer.contact-bar {
 /* ---------- Contact page: contact block + side-by-side resume viewers ---------- */
 
 .contact-oneliner {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--ink-soft);
-  max-width: 56ch;
+  max-width: none;
   margin: 20px 0 0;
 }
 
 .contact-block {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding-top: 40px;
   padding-bottom: 8px;
@@ -901,7 +901,7 @@ footer.contact-bar {
 
 .contact-method-label {
   font-family: var(--font-display);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 600;
@@ -910,7 +910,7 @@ footer.contact-bar {
 
 .contact-method-value {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--maroon-dark);
   border-bottom: 1px solid transparent;
@@ -998,9 +998,15 @@ footer.contact-bar {
   }
 
   .contact-block {
+    grid-template-columns: 1fr;
     gap: 28px;
     padding-top: 28px;
     margin-top: 28px;
+  }
+
+  .contact-method-value {
+    font-size: 1.15rem;
+    word-break: break-word;
   }
 
   .resume-section {
@@ -1429,7 +1435,7 @@ html.js .full-bleed-figure.is-visible img {
 
 .project-split-quiet-img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3.4;
   object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 24px 50px rgba(74, 26, 39, 0.16);
@@ -1600,6 +1606,7 @@ html.js .full-bleed-figure.is-visible img {
   overflow: hidden;
   border-radius: 6px;
   aspect-ratio: 4 / 2.9;
+  min-width: 0;
 }
 
 .cs-card--primary {
@@ -1666,8 +1673,10 @@ html.js .full-bleed-figure.is-visible img {
 .cs-card-tag {
   font-size: 1.05rem;
   font-weight: 500;
+  line-height: 1.4;
   color: rgba(250, 245, 236, 0.92);
   max-width: 42ch;
+  min-height: 2.8em;
   margin: 0 0 20px;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
@@ -2088,6 +2097,10 @@ html.js .full-bleed-figure.is-visible img {
   align-items: flex-end;
 }
 
+.case-split--align-center {
+  align-items: center;
+}
+
 .case-split-text {
   flex: 1 1 0;
   min-width: 0;
@@ -2248,6 +2261,22 @@ html.js .full-bleed-figure.is-visible img {
   max-width: 52ch;
   margin: 0 auto;
   line-height: 1.4;
+}
+
+.case-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--maroon);
+  transition: gap 0.3s var(--ease);
+}
+
+.case-next:hover {
+  gap: 13px;
 }
 
 /* ---------- AMG: storytelling hero stat line ---------- */
@@ -2431,7 +2460,7 @@ html.js .full-bleed-figure.is-visible img {
 }
 
 .account-top-media.support-shot {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;
 }
 
 .account-top-media.support-shot img {
@@ -3242,10 +3271,6 @@ html.js .full-bleed-figure.is-visible img {
   .cs-main-grid {
     grid-template-columns: 1fr;
     grid-template-rows: none;
-  }
-
-  .cs-main-grid .cs-card {
-    min-height: 300px;
   }
 
   .cs-more-row {
