@@ -16,8 +16,8 @@
   --line: rgba(43, 33, 31, 0.12);
   --line-on-maroon: rgba(250, 245, 236, 0.22);
 
-  --font-display: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-body: Georgia, "Times New Roman", serif;
+  --font-display: "Bricolage Grotesque", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
 
   --content-max: 1480px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -187,6 +187,38 @@ html.js .reveal.is-visible {
 .nav-links a:hover::after,
 .nav-links a[aria-current="page"]::after {
   width: 100%;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.nav-lang a {
+  color: var(--ink-soft);
+  transition: color 0.2s ease;
+}
+
+.nav-lang a.is-active {
+  color: var(--maroon);
+}
+
+.nav-lang a:hover {
+  color: var(--maroon);
+}
+
+.nav-lang span {
+  color: var(--line);
 }
 
 /* ---------- Hero ---------- */
@@ -3367,12 +3399,21 @@ html.js .full-bleed-figure.is-visible img {
     font-size: 0.9rem;
   }
 
+  .nav-right {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   .nav-links {
     gap: 12px;
     flex-wrap: wrap;
   }
 
   .nav-links a {
+    font-size: 0.7rem;
+  }
+
+  .nav-lang {
     font-size: 0.7rem;
   }
 
