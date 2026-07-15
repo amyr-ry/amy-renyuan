@@ -1468,7 +1468,7 @@ footer.contact-bar {
 .full-bleed-figure {
   position: relative;
   width: 100%;
-  min-height: 68dvh;
+  min-height: 68vh;
   overflow: hidden;
   margin: 0;
 }
@@ -1525,7 +1525,7 @@ html.js .full-bleed-figure.is-visible img {
 }
 
 .full-bleed-figure--portrait {
-  min-height: 55dvh;
+  min-height: 55vh;
   max-width: 480px;
   margin: 0 auto;
 }
@@ -2399,11 +2399,37 @@ html.js .full-bleed-figure.is-visible img {
   line-height: 1.4;
 }
 
+/* Back/next row — same left-back, right-next pattern used on Art pages'
+   .project-closing, so the two sections navigate consistently. */
+.case-closing-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+  text-align: left;
+}
+
+.case-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--maroon);
+  transition: gap 0.3s var(--ease);
+}
+
+.case-back:hover {
+  gap: 13px;
+}
+
 .case-next {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 32px;
   font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 600;
