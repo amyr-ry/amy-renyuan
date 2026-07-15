@@ -17,6 +17,7 @@
   --line-on-maroon: rgba(250, 245, 236, 0.22);
 
   --font-display: "Bricolage Grotesque", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display-zh: "ZCOOL XiaoWei", "Bricolage Grotesque", "Songti SC", "STSong", "PingFang SC", serif;
   --font-body: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
 
   --content-max: 1480px;
@@ -25,6 +26,12 @@
   /* Shared vertical rhythm between case-study sections — one value,
      applied uniformly regardless of how much content a section holds. */
   --section-gap: 76px;
+}
+
+/* Chinese pages: softer, brush-influenced display face instead of the
+   grotesque sans used on the English titles. */
+html[lang="zh"] {
+  --font-display: var(--font-display-zh);
 }
 
 /* Case Studies section: one step up from the site base type scale.
