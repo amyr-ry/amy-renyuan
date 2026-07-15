@@ -28,10 +28,55 @@
   --section-gap: 76px;
 }
 
-/* Chinese pages: softer, brush-influenced display face instead of the
+/* Chinese pages: classic editorial serif display face instead of the
    grotesque sans used on the English titles. */
 html[lang="zh"] {
   --font-display: var(--font-display-zh);
+}
+
+/* Latin proper nouns (site name, "EN" toggle, untranslated titles like
+   "Algood"/"Hello World") should stay in the English display face even on
+   zh pages — Noto Serif SC has its own Latin glyphs and would otherwise
+   silently render them in a different typeface than the EN site. */
+html[lang="zh"] .nav-logo,
+html[lang="zh"] .contact-inner .name,
+html[lang="zh"] .nav-lang a:first-child,
+html[lang="zh"] .latin-title {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+/* Eyebrow/label tracking (0.08–0.16em) is tuned for tracked-out English
+   small caps and reads as unnatural gaps between CJK characters — pull it
+   back for zh, and drop the forced uppercase (it does nothing for Chinese
+   but forces any embedded Latin words like "Instagram" into caps). */
+html[lang="zh"] .hero-eyebrow,
+html[lang="zh"] .subhero-eyebrow,
+html[lang="zh"] .about-hero-eyebrow,
+html[lang="zh"] .about-card-eyebrow,
+html[lang="zh"] .about-education-label,
+html[lang="zh"] .contact-method-label,
+html[lang="zh"] .resume-panel-label,
+html[lang="zh"] .cs-statement-eyebrow,
+html[lang="zh"] .cs-card-eyebrow,
+html[lang="zh"] .case-eyebrow,
+html[lang="zh"] .hero-scroll-cue span,
+html[lang="zh"] .case-badge,
+html[lang="zh"] .pillar-tag,
+html[lang="zh"] .doc-panel-eyebrow,
+html[lang="zh"] .pivot-panel-label,
+html[lang="zh"] .remap-platform {
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* CJK fonts have no true italic design — browsers fake it with a slant
+   that reads as broken rather than stylistic. Drop it for zh captions. */
+html[lang="zh"] .project-figure figcaption,
+html[lang="zh"] .stat-caption,
+html[lang="zh"] .case-heading-sub,
+html[lang="zh"] .pinned-artifact figcaption,
+html[lang="zh"] .doc-caption {
+  font-style: normal;
 }
 
 /* Case Studies section: one step up from the site base type scale.
@@ -1051,8 +1096,19 @@ footer.contact-bar {
     padding-bottom: 64px;
   }
 
+  /* A 460px-tall PDF preview is unreadable at this width — drop the
+     iframe entirely and make the download link the primary affordance. */
   .resume-frame {
-    height: 460px;
+    display: none;
+  }
+
+  .resume-panel .case-download {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    padding: 14px 20px;
+    border: 1px solid var(--maroon);
+    border-radius: 8px;
   }
 }
 
@@ -1076,6 +1132,18 @@ footer.contact-bar {
   color: var(--maroon-dark);
   margin: 0;
   letter-spacing: -0.02em;
+}
+
+/* zh "艺术创作" is 4 characters where EN "Art" is one word — the huge
+   English-tuned clamp wraps it into a cramped 2-line stack in the narrow
+   1fr column. Scale it down so it sits on one line instead. Scoped to
+   widths above the 860px breakpoint, where the existing mobile clamp
+   already sizes this comfortably for either language. */
+@media (min-width: 861px) {
+  html[lang="zh"] .art-statement h1 {
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    line-height: 1;
+  }
 }
 
 .art-statement-text {
@@ -1204,6 +1272,22 @@ footer.contact-bar {
 
 .project-statement {
   max-width: 66ch;
+}
+
+/* Inline links inside body copy (project statements, About-page bullets)
+   inherit color:inherit/no-underline from the global reset, so they're
+   invisible as links until hovered — give them a visible affordance. */
+.project-statement a,
+.about-card-body a {
+  color: var(--maroon);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.project-statement a:hover,
+.about-card-body a:hover {
+  text-decoration-color: currentColor;
 }
 
 .project-statement--full {
@@ -1573,7 +1657,11 @@ html.js .full-bleed-figure.is-visible img {
   margin-top: 56px;
   padding-top: 32px;
   border-top: 1px solid var(--line);
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .project-closing a {
@@ -1585,6 +1673,17 @@ html.js .full-bleed-figure.is-visible img {
 
 .project-closing a:hover {
   opacity: 0.7;
+}
+
+.project-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.3s var(--ease);
+}
+
+.project-next:hover {
+  gap: 13px;
 }
 
 /* ---------- Case Studies index: statement + bento grids ---------- */
@@ -2754,6 +2853,20 @@ html.js .full-bleed-figure.is-visible img {
   border-radius: 10px;
   overflow: hidden;
   background: var(--cream-deep);
+  position: relative;
+}
+
+/* Scroll affordance: a persistent bottom fade hints there's more content
+   below, since .doc-panel-scroll's native scrollbar is easy to miss. */
+.doc-panel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--cream-deep));
+  pointer-events: none;
 }
 
 .doc-panel-head {
@@ -3428,6 +3541,19 @@ html.js .full-bleed-figure.is-visible img {
     padding: 52px 0 56px;
   }
 
+  /* Longer captions ("Hills, three weeks in", "A green valley, out of
+     nowhere") were overflowing the viewport uncontained — clip the width
+     and shrink the label so they wrap instead of running off-screen. */
+  .full-bleed-caption {
+    left: 20px;
+    right: 20px;
+  }
+
+  .full-bleed-caption .label {
+    font-size: 1.15rem;
+    min-width: 0;
+  }
+
   section.block,
   .philosophy-block {
     padding: 56px 0;
@@ -3463,6 +3589,13 @@ html.js .full-bleed-figure.is-visible img {
   .project-hero {
     padding-top: 40px;
     padding-bottom: 44px;
+  }
+
+  /* "Wild West（美国西部）" is long enough to wrap at narrow widths — force
+     the parenthetical gloss onto its own line instead of letting it break
+     mid-word. */
+  .project-hero h1 .latin-title {
+    display: block;
   }
 
   .film-tile {
@@ -3502,6 +3635,14 @@ html.js .full-bleed-figure.is-visible img {
   .text-hero {
     padding: 48px 0 40px;
     min-height: 34dvh;
+  }
+
+  /* Most case-study titles are single short words/acronyms and never wrap,
+     but longer ones ("UChicago Law School") can wrap to 2 lines at this
+     width — loosen the line-height so a wrap reads as intentional rather
+     than cramped (mirrors the fix applied to the Art index title). */
+  .text-hero h1 {
+    line-height: 1.05;
   }
 
   .hero-scroll-cue {
