@@ -17,7 +17,7 @@
   --line-on-maroon: rgba(250, 245, 236, 0.22);
 
   --font-display: "Bricolage Grotesque", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display-zh: "ZCOOL XiaoWei", "Bricolage Grotesque", "Songti SC", "STSong", "PingFang SC", serif;
+  --font-display-zh: "Noto Serif SC", "Songti SC", "STSong", "Bricolage Grotesque", serif;
   --font-body: Georgia, "Times New Roman", "Songti SC", "SimSun", serif;
 
   --content-max: 1480px;
