@@ -1656,7 +1656,7 @@ html.js .full-bleed-figure.is-visible img {
 .project-closing {
   margin-top: 56px;
   padding-top: 32px;
-  padding-bottom: 116px;
+  padding-bottom: 48px;
   border-top: 1px solid var(--line);
   display: flex;
   align-items: center;
@@ -3682,10 +3682,6 @@ html.js .full-bleed-figure.is-visible img {
 
   .case-closing {
     padding-top: 64px;
-    padding-bottom: 76px;
-  }
-
-  .project-closing {
     padding-bottom: 76px;
   }
 
