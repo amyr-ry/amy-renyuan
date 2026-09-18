@@ -2610,6 +2610,13 @@ html.js .full-bleed-figure.is-visible img {
 
 /* ---------- Creator Content: account section, two-row two-column structure ---------- */
 
+.account-id {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 10px 0 0;
+}
+
 .account-top {
   display: grid;
   grid-template-columns: 2fr 1fr;
