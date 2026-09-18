@@ -66,41 +66,46 @@
     <h2 class="case-heading reveal">别饿着!!!: AI-Assisted Production System</h2>
     <p class="account-id reveal" style="--i:1">Douyin ID: s120100394 &middot; RedNote ID: s120100394</p>
 
-    <div class="account-top reveal" style="--i:1">
+    <div class="account-top account-top--stacked reveal" style="--i:1">
       <ul class="case-bullets">
         <li>Persona, tone, and content direction are entirely self-directed — the voice, the recipes, the daily rhythm</li>
         <li>Filming and editing done solo, every dish, every day</li>
         <li><strong>Daily posting created a real bottleneck</strong>: writing captions from scratch, every day, wasn't sustainable</li>
         <li>Solution: turned my own voice into a reusable template, then had AI draft caption copy off that template — <strong>AI drafts, I edit and approve</strong>. It saves time, not creativity</li>
         <li>Three months in, the Douyin account has 358 followers and over 4K likes, with the best-performing pinned recipe hitting 56K views. I've also started cross-posting to RedNote recently, building an audience there from zero</li>
-        <li><strong>During my current job search, I turned this into an actual working tool:</strong></li>
+        <li><strong>I actually built this into a working tool a while back:</strong></li>
         <li>After three months and close to a hundred real captions, I fed the template my own published posts as reference — hard-coding each platform's title structure, pacing, and hashtag rules (count and placement) directly into the tool instead of re-explaining it every time</li>
         <li>The drafts it produces now are platform-native: Douyin and RedNote differ in structure and where hashtags go, matched to how each platform actually works, and it remembers each account's voice and past drafts, getting more accurate the more I use it</li>
       </ul>
-      <button class="support-shot account-top-media" type="button" data-full="美食号1.jpg">
-        <img src="美食号1.jpg" alt="Douyin content grid for 别饿着!!!, showing daily food videos and view counts" loading="lazy" />
-      </button>
-    </div>
-
-    <div class="support-duo reveal" style="--i:2">
-      <button class="support-shot" type="button" data-full="美食号3.png">
-        <img src="美食号3.png" alt="Interface of the self-built AI caption tool, generating platform-specific titles and captions" loading="lazy" />
-      </button>
-      <button class="support-shot" type="button" data-full="美食号2.jpg">
-        <img src="美食号2.jpg" alt="Notion page documenting the build process for the AI caption tool" loading="lazy" />
-      </button>
-    </div>
-
-    <div class="video-frame video-frame--wide reveal" style="--i:3">
-      <div style="padding:75% 0 0 0;position:relative;">
-        <iframe src="https://player.vimeo.com/video/1208211595?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          style="position:absolute;top:0;left:0;width:100%;height:100%;"
-          title="028">
-        </iframe>
+      <div class="account-top-media-stack">
+        <button class="support-shot account-top-media" type="button" data-full="美食号1.jpg">
+          <img src="美食号1.jpg" alt="Douyin content grid for 别饿着!!!, showing daily food videos and view counts" loading="lazy" />
+        </button>
+        <div class="video-frame">
+          <div style="padding:75% 0 0 0;position:relative;">
+            <iframe src="https://player.vimeo.com/video/1208211595?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;"
+              title="028">
+            </iframe>
+          </div>
+        </div>
       </div>
+    </div>
+
+    <div class="tool-shots reveal" style="--i:2">
+      <figure class="pinned-artifact">
+        <button type="button" data-full="美食号3.png" class="pinned-artifact-btn">
+          <img src="美食号3.png" alt="Interface of the self-built AI caption tool, generating platform-specific titles and captions" loading="lazy" />
+        </button>
+      </figure>
+      <figure class="pinned-artifact pinned-artifact--alt">
+        <button type="button" data-full="美食号2.jpg" class="pinned-artifact-btn">
+          <img src="美食号2.jpg" alt="Notion page documenting the build process for the AI caption tool" loading="lazy" />
+        </button>
+      </figure>
     </div>
     <script src="https://player.vimeo.com/api/player.js"></script>
   </section>
@@ -143,81 +148,6 @@
       </div>
     </div>
     <script src="https://player.vimeo.com/api/player.js"></script>
-  </section>
-
-  <section class="case-section wrap">
-    <h2 class="case-heading reveal">Early Signals</h2>
-    <p class="case-intro reveal" style="--i:1">Douyin backend, 7-day snapshot vs. comparable creators in the same category. Completion rate is trailing, and included at the same weight as everything else — flagged here as the next thing to work on, not hidden.</p>
-
-    <div class="stat-compare reveal" style="--i:2">
-      <div class="stat-compare-item">
-        <p class="stat-compare-label">Views, 7-day snapshot</p>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">You</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--mine" style="width:93.56%"></div></div>
-          <span class="stat-compare-num">93.56th pct.</span>
-        </div>
-      </div>
-
-      <div class="stat-compare-item">
-        <p class="stat-compare-label">Engagement rate</p>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">You</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--mine" style="width:100%"></div></div>
-          <span class="stat-compare-num">4.6%</span>
-        </div>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">Category avg</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--avg" style="width:58.7%"></div></div>
-          <span class="stat-compare-num">2.7%</span>
-        </div>
-      </div>
-
-      <div class="stat-compare-item">
-        <p class="stat-compare-label">Posting volume</p>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">You</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--mine" style="width:100%"></div></div>
-          <span class="stat-compare-num">7</span>
-        </div>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">Category avg</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--avg" style="width:28.6%"></div></div>
-          <span class="stat-compare-num">2</span>
-        </div>
-      </div>
-
-      <div class="stat-compare-item">
-        <p class="stat-compare-label">Net follower growth</p>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">You</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--mine" style="width:100%"></div></div>
-          <span class="stat-compare-num">+18</span>
-        </div>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">Category avg</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--avg" style="width:11.1%"></div></div>
-          <span class="stat-compare-num">+2</span>
-        </div>
-      </div>
-
-      <div class="stat-compare-item">
-        <p class="stat-compare-label">Completion rate <span class="stat-compare-flag">trailing</span></p>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">You</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--mine" style="width:12.2%"></div></div>
-          <span class="stat-compare-num">1.5%</span>
-        </div>
-        <div class="stat-compare-bar-row">
-          <span class="stat-compare-tag">Category avg</span>
-          <div class="stat-compare-track"><div class="stat-compare-fill stat-compare-fill--avg" style="width:100%"></div></div>
-          <span class="stat-compare-num">12.3%</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="case-intro reveal" style="--i:3; margin-top:24px;">RedNote: 309 followers, 855 likes &amp; saves as of early July 2026.</p>
-    <p class="case-intro reveal" style="--i:4; margin-top:12px;">That's the earliest 7-day snapshot. For the latest numbers, three months in, see the two account sections above.</p>
   </section>
 
   <section class="case-closing wrap">

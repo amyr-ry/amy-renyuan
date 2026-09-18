@@ -2638,6 +2638,21 @@ html.js .full-bleed-figure.is-visible img {
   object-fit: cover;
 }
 
+.account-top--stacked {
+  align-items: start;
+}
+
+.account-top-media-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account-top-media-stack .video-frame {
+  margin: 0;
+  max-width: none;
+}
+
 .account-media-row {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -2760,97 +2775,26 @@ html.js .full-bleed-figure.is-visible img {
   text-align: center;
 }
 
-/* ---------- Creator Content Section C: understated stat-bar comparison ---------- */
+/* ---------- Creator Content: two large tilted tool screenshots, side by side ---------- */
 
-.stat-compare {
-  margin: 36px 0 0;
-  background: var(--cream-deep);
-  border-radius: 14px;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.stat-compare-label {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--maroon-dark);
-  margin: 0 0 12px;
-}
-
-.stat-compare-flag {
-  font-family: var(--font-display);
-  font-size: 0.62rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--maroon);
-  border: 1px solid var(--maroon);
-  border-radius: 999px;
-  padding: 2px 8px;
-  margin-left: 8px;
-  vertical-align: middle;
-}
-
-.stat-compare-bar-row {
+.tool-shots {
   display: grid;
-  grid-template-columns: 100px 1fr 70px;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 8px;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 56px 0 0;
 }
 
-.stat-compare-bar-row:last-child {
-  margin-bottom: 0;
+.tool-shots .pinned-artifact {
+  max-width: none;
+  margin: 0;
 }
 
-.stat-compare-tag {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--ink-soft);
+.pinned-artifact--alt .pinned-artifact-btn {
+  transform: rotate(2deg);
 }
 
-.stat-compare-track {
-  position: relative;
-  height: 10px;
-  background: rgba(43, 33, 31, 0.08);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.stat-compare-fill {
-  height: 100%;
-  border-radius: 999px;
-}
-
-.stat-compare-fill--mine {
-  background: var(--maroon);
-}
-
-.stat-compare-fill--avg {
-  background: rgba(43, 33, 31, 0.26);
-}
-
-.stat-compare-num {
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--ink);
-  text-align: right;
-}
-
-/* ---------- Creator Content Section C: smaller supporting screenshots ---------- */
-
-.support-duo {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-  max-width: 460px;
+.pinned-artifact--alt .pinned-artifact-btn:hover {
+  transform: rotate(1deg) translateY(-4px);
 }
 
 .support-shot {
@@ -3535,6 +3479,11 @@ html.js .full-bleed-figure.is-visible img {
     grid-template-columns: 1fr;
     gap: 28px;
   }
+
+  .tool-shots {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -3741,24 +3690,13 @@ html.js .full-bleed-figure.is-visible img {
     max-width: none;
   }
 
-  .pinned-artifact-btn {
+  .pinned-artifact-btn,
+  .pinned-artifact--alt .pinned-artifact-btn {
     transform: none;
   }
 
-  .pinned-artifact-btn:hover {
+  .pinned-artifact-btn:hover,
+  .pinned-artifact--alt .pinned-artifact-btn:hover {
     transform: translateY(-4px);
-  }
-
-  .stat-compare {
-    padding: 24px 20px;
-  }
-
-  .stat-compare-bar-row {
-    grid-template-columns: 76px 1fr 60px;
-    gap: 10px;
-  }
-
-  .support-duo {
-    max-width: none;
   }
 }
