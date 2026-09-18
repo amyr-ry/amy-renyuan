@@ -3479,11 +3479,6 @@ html.js .full-bleed-figure.is-visible img {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-
-  .tool-shots {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
 }
 
 @media (max-width: 640px) {
@@ -3698,5 +3693,13 @@ html.js .full-bleed-figure.is-visible img {
   .pinned-artifact-btn:hover,
   .pinned-artifact--alt .pinned-artifact-btn:hover {
     transform: translateY(-4px);
+  }
+
+  .tool-shots {
+    gap: 14px;
+  }
+
+  .tool-shots .pinned-artifact-btn {
+    padding: 8px 8px 20px;
   }
 }
